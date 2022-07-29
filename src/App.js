@@ -9,7 +9,6 @@ const App = (props) => {
   return (
       <div>
           <Navbar/>
-          <h4 className="h4 text-decoration-none">I'm NavBar</h4>
           <Routes>
               <Route path="/" element={<Home/>} />
               <Route path="story" element={<Story/>} />
