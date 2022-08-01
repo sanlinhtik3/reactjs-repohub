@@ -1,29 +1,36 @@
 import {NavLink} from "react-router-dom";
+import '../../assets/css/Cus.css';
+import {useState} from "react";
 
 const Navbar = props => {
+
+    const [open, setOpen] = useState(false);
+
+    const menu = () => {
+        setOpen(!open)
+    }
+
     return (
         <div>
 
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-10">
-                        <nav className="navbar navbar-expand-lg">
+                        <nav className="navbar navbar-expand-lg z-1000">
                             <div className="container">
                                 <a className="navbar-brand" href="#">Repo Hub</a>
-                                <button className="btn border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
-                                        aria-controls="offcanvasTop">Menu
-                                </button>
+                                <div className={`${open ? "show" : ''} menu-icon`} onClick={menu} data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                                    <span></span>
+                                    <span></span>
+                                </div>
                             </div>
                         </nav>
                     </div>
                 </div>
             </div>
 
-
             <div className="offcanvas offcanvas-top" tabIndex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
                 <div className="offcanvas-header">
-                    <h5 className="offcanvas-title" id="offcanvasTopLabel">RepoHub</h5>
-                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div className="offcanvas-body">
                     <div>
